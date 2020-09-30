@@ -1,5 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { select, Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { Article } from './article/article.model';
+import { getAllArticles } from '../../core/store/articles/articles.selector';
+import { ArticleDislike, ArticleLike } from '../../core/store/articles/articles.actions';
 
 @Component({
     selector: 'app-articles',
@@ -8,19 +12,19 @@ import { Article } from './article/article.model';
 })
 export class ArticlesComponent implements OnInit {
 
-    @Input() articles: Article[] = [];
+    constructor(private store: Store<any>) {}
+
+    articles$: Observable<Article[]> = this.store.pipe(select(getAllArticles));
 
     ngOnInit(): void {
-        console.log(this.articles);
+        
     }
 
-    like(articleId) {
-        // TODO
+    onLike(articleId) {
+        this.store.dispatch(new ArticleLike(articleId));
     }
-
-    dislike(articleId) {
-        // TODO
+    
+    onDislike(articleId) {
+        this.store.dispatch(new ArticleDislike(articleId));
     }
-
-
 }

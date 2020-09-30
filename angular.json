@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "mhr"
+    }
+  },
+  "defaultProject": "mhr",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }

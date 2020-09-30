@@ -3,33 +3,24 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FooterComponent } from './shared/footer/footer.component';
-import { HeaderComponent } from './shared/header/header.component';
-import { NavComponent } from './shared/nav/nav.component';
-import { TagsComponent } from './shared/tags/tags.component';
-import { HomeComponent } from './home/home.component';
 import { HomeModule } from './home/home.module';
-import { LikeDislikeComponent } from './shared/like-dislike/like-dislike.component';
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    FooterComponent,
-    HeaderComponent,
-    NavComponent,
-    TagsComponent,
-    HomeComponent,
-    LikeDislikeComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    StoreModule.forRoot(reducers, {
-      metaReducers
-    }),
     HomeModule,
-    AppRoutingModule
+    SharedModule,
+    AppRoutingModule,
+    StoreModule.forRoot(reducers, { metaReducers }),
+    !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
   providers: [],
   bootstrap: [AppComponent]

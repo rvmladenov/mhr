@@ -3,6 +3,8 @@ import { ArticlesService } from '../core/articles/articles.service';
 import { Article } from './articles/article/article.model';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { AddArticles } from '../core/store/articles/articles.actions';
 
 @Component({
     selector: 'app-home',
@@ -12,16 +14,15 @@ import { Subject } from 'rxjs';
 export class HomeComponent implements OnInit, OnDestroy {
 
     private unsubscribe$ = new Subject<void>();
-    articles: Article[] = [];
 
-    constructor(private articlesService: ArticlesService) { }
+    constructor(private articlesService: ArticlesService, private store: Store<any>) { }
 
     ngOnInit(): void {
         this.articlesService
             .getAllArticles()
             .pipe(takeUntil(this.unsubscribe$))
             .subscribe((articles: Article[]) => {
-                this.articles = articles;
+                this.store.dispatch(new AddArticles(articles));
             })
     }
 

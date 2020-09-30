@@ -16,7 +16,7 @@ export class LikeDislikeComponent {
     }
 
     onDislike() {
-        this.like.emit();
+        this.dislike.emit();
     }
 
 }
