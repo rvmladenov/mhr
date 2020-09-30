@@ -1,0 +1,3 @@
+<div class="article-container" *ngFor="let article of articles">
+    <app-article [article]="article" (disLike)="dislike(article.id)" (like)="like(article.id)"></app-article>
+</div>
