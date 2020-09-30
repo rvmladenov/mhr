@@ -1,0 +1,31 @@
+.like-dislike-container {
+    display: flex;
+    align-items: center;
+}
+
+.likes-number {
+    margin: 0 6px;
+    font-style: italic;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+button {
+    background: none;
+    border: 0;
+    outline: 0;
+}
+
+.like {
+    width: 32px;
+    height: 32px;
+    background: url(../../../assets/images/thumbs_sprite.png);
+    background-position: 96px 0px;
+}
+
+.dislike {
+    width: 32px;
+    height: 32px;
+    background: url(../../../assets/images/thumbs_sprite.png);
+    background-position: 64px 0px;
+}

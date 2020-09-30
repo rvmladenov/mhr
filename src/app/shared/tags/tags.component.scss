@@ -1,0 +1,14 @@
+.tags-container {
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.tag {
+    font-size: 10pt;
+    font-weight: bold;
+    color: gray;
+
+    &:not(:last-child) {
+        margin-right: 15px;
+    }
+}

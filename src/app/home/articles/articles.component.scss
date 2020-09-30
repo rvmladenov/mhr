@@ -1,0 +1,16 @@
+@import '../../styles/global/vars';
+
+.article-container {
+    &:nth-child(even) {
+        color: $bgColor;
+        background-color: $evenBgColor;
+
+        & ::ng-deep .like {
+            background-position: 96px -32px
+        }
+
+        & ::ng-deep .dislike {
+            background-position: 64px -32px
+        }
+    }
+}

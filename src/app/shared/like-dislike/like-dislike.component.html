@@ -1,5 +1,5 @@
 <div class="like-dislike-container">
-    <button (click)="onLike()"> Like </button>
-    {{ likes }}
-    <button (click)="onDislike()"> Dislike </button>
+    <button (click)="onLike()" class="like"></button>
+    <span class="likes-number">{{ likes }}</span>
+    <button (click)="onDislike()" class="dislike"></button>
 </div>

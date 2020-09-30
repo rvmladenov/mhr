@@ -1,0 +1,15 @@
+header {
+    display: flex;
+    padding-top: 20px;
+
+    & h1 {
+        margin: 0;
+        font-size: 4.1em;
+        line-height: 0.8em;
+    }
+
+    .logo {
+        padding-left: 20px;
+        box-sizing: border-box;
+    }
+}

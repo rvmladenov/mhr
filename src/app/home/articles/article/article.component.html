@@ -1,11 +1,21 @@
 <article>
-    <h2>{{ article.title }}</h2>
     <div class="like-dislike-article">
-        <div>
-            <app-like-dislike [likes]="article.likes || 0" (like)="onLike()" (dislike)="onDislike()"></app-like-dislike>
+        <div class="d-flex">
+            <div class="col-left">&nbsp;</div>
+            <div>
+                <h5>{{ article.title }}</h5>
+            </div>
         </div>
-        <div>
-            {{ article.text }}
+        <div class="d-flex">
+            <div class="col-left">
+                <app-like-dislike [likes]="article.likes || 0" (like)="onLike()" (dislike)="onDislike()"></app-like-dislike>
+            </div>
+            <div>
+                <div>
+                    {{ article.text }}
+                </div>
+                <app-tags [tags]="article.tags"></app-tags>
+            </div>
         </div>
     </div>
 

@@ -7,8 +7,23 @@ body {
     font-size: 14pt;
     background-color: $bgColor;
     color: $color;
+    margin: 0;
+    padding: 0;
 }
 
 a {
     text-decoration: none;
+}
+
+.col-left {
+    width: 210px;
+    margin-right: 20px;
+}
+
+.d-flex {
+    display: flex;
+}
+
+h5 {
+    margin: 15px 0;
 }

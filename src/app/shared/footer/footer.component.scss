@@ -1,0 +1,14 @@
+@import '../../styles/global/vars';
+
+footer {
+    padding: 5px 0;
+    display: flex;
+    background-color: $color;
+    color: $bgColor;
+}
+
+.footer-text {
+    display: flex;
+    align-items: center;
+    font-size: 8pt;
+}

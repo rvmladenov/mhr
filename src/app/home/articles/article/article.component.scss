@@ -1,0 +1,14 @@
+h5 {
+    font-style: italic;
+    font-size: 16pt;
+}
+
+.col-left {
+    justify-content: flex-end;
+}
+
+app-like-dislike {
+    width: 210px;
+    display: flex;
+    justify-content: flex-end
+}

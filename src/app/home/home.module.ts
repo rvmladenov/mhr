@@ -9,6 +9,7 @@ import { StoreModule } from '@ngrx/store';
 import { reducer, reducerName } from '../core/store/articles/articles.reducer';
 import { HomeComponent } from './home.component';
 import { SharedModule } from '../shared/shared.module';
+import { BrowserModule } from '@angular/platform-browser';
 
 const components = [HomeComponent, ArticlesComponent, ArticleComponent];
 
@@ -16,7 +17,7 @@ const components = [HomeComponent, ArticlesComponent, ArticleComponent];
     declarations: components,
     exports: components,
     imports: [
-        CommonModule,
+        BrowserModule, CommonModule,
         HomeRoutingModule,
         SharedModule,
         HttpClientModule,
