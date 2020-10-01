@@ -7,7 +7,9 @@
 
     a {
         color: $color;
-        &:hover {
+
+        &:hover,
+        &.active {
             color: $hoverColor;
         }
 

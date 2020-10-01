@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
 import { FooterComponent } from '../shared/footer/footer.component'
 import { HeaderComponent } from '../shared/header/header.component'
@@ -16,7 +17,7 @@ const components = [
     LikeDislikeComponent];
 
 @NgModule({
-    imports: [ BrowserModule, CommonModule ],
+    imports: [ BrowserModule, CommonModule, RouterModule ],
     declarations: components,
     exports: components
 })
